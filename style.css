@@ -1,0 +1,45 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+   color: #2b2b2b;
+   margin-bottom: 24px;
+   text-align: center;
+}
+
+.container {
+   display: flex;
+   flex-direction: column;
+   max-width: 200px;
+   margin: 24px auto;
+   background: #fff;
+}
+
+.box-color {
+   width: 200px;
+   height: 200px;
+   border: 1px solid grey;
+   border-radius: 4px;
+   margin-bottom: 12px;
+}
+
+.choose-color-txt,
+.new-value-txt,
+.luminosity-range {
+   width: 200px;
+   margin-bottom: 12px;
+   height: 24px;
+   outline: none;
+}
+.label {
+   text-transform: uppercase;
+   font-size: 10px;
+   font-weight: 700;
+}
