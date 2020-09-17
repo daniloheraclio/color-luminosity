@@ -3,9 +3,56 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
    <title>Hexadecila color manipulation</title>
 </head>
 <body>
+   <div class="container">
+      <h3>Darken - Lighten</h3>
+      <div class="box-color"></div>
+
+      <div class="choose-color">
+         <label 
+            class="label" 
+            for="startHex">Choose color</label>
+         <input 
+            class="choose-color-txt" 
+            type="text" 
+            name="startHex" 
+            id="startHex"
+         >
+      </div>
+
+      <div class="luminosity">
+         <label 
+            class="label" 
+            for="range">Choose color</label>
+         <input 
+            class="luminosity-range" 
+            type="range" 
+            name="range" 
+            id="range"
+            min="-1" 
+            max="1" 
+            value="0"
+            step="0.025"
+         >
+      </div>
+
+      <div class="new-value">
+         <label 
+            class="label" 
+            for="finalHex">New Hex</label>
+         <input 
+            class="new-value-txt" 
+            type="text" 
+            name="finalHex"
+            id="finalHex"
+         >
+      </div>
+
+   </div>
    <script src="./app.js"></script>
 </body>
 </html>

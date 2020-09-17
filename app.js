@@ -1,11 +1,19 @@
-const { body } = document;
+const box = document.querySelector('.box-color');
+const range = document.querySelector('.luminosity-range');
+const startHexColor = document.querySelector('#startHex');
 
-try {
-   body.style.backgroundColor = luminace('#63c', -0.6);
-} catch (error) {
-   console.log(error.message);
-}
+range.addEventListener('change', function() {
+   console.log(range.value);
+   console.log(startHexColor.value)
+   try {
+      console.log(box.style.backgroundColor)
+      box.style.backgroundColor = luminace(startHexColor.value, range.value);
+   } catch (error) {
+      console.log(error.message);
+   }
 
+
+})
 
 function luminace(hex, luminosity = 0) {
 
@@ -55,7 +63,6 @@ function luminace(hex, luminosity = 0) {
       const partialHex = numberToHex.padStart(2, '0');
 
       finalHex = finalHex + partialHex;
-      console.log(finalHex);
 
    });
    return finalHex
