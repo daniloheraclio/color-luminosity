@@ -1,19 +1,44 @@
 const box = document.querySelector('.box-color');
 const range = document.querySelector('.luminosity-range');
 const startHexColor = document.querySelector('#startHex');
+const errorLabel = document.querySelector('.error-label');
 
 range.addEventListener('input', function() {
-   console.log(range.value);
-   console.log(startHexColor.value)
    try {
-      console.log(box.style.backgroundColor)
       box.style.backgroundColor = luminace(startHexColor.value, range.value);
    } catch (error) {
+     
       console.log(error.message);
    }
 
 
 })
+
+startHexColor.addEventListener('input', formatStartColor);
+
+function formatStartColor(e)  {
+   let hex = e.target.value;
+   
+   // format hex to keep only numbers and letters from a to f
+   hex = hex.replace(/[^0-9a-f]/gi, '');
+
+   // populate input value only with valid chars
+   startHexColor.value = hex
+
+   // accept only 3 or 6 digits
+   const isValidHex = hex.length === 6 || hex.length === 3;
+
+
+   // enabling range if input is valid
+   if (isValidHex) {
+      range.disabled = false;
+      box.style.backgroundColor = luminace(startHexColor.value, range.value);
+      errorLabel.style.display = 'none';
+   } else {
+      errorLabel.style.display = 'block';
+      range.disabled = true;
+   }
+}
 
 function luminace(hex, luminosity = 0) {
 
