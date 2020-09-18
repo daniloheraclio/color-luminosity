@@ -2,7 +2,7 @@ const box = document.querySelector('.box-color');
 const range = document.querySelector('.luminosity-range');
 const startHexColor = document.querySelector('#startHex');
 
-range.addEventListener('change', function() {
+range.addEventListener('input', function() {
    console.log(range.value);
    console.log(startHexColor.value)
    try {

@@ -7,6 +7,7 @@
    <link rel="stylesheet" href="style.css">
    <title>Hexadecila color manipulation</title>
 </head>
+<script src="https://unpkg.com/feather-icons"></script>
 <body>
    <div class="container">
       <h3>Darken - Lighten</h3>
@@ -15,19 +16,28 @@
       <div class="choose-color">
          <label 
             class="label" 
-            for="startHex">Choose color</label>
+            for="startHex">Choose HEX color
+         </label>
+         <div class="tooltip">
+            <div class="icon-tooltip">
+               <i class="icon" data-feather="info"></i>
+               <span class="icon-tooltip-text">3 or 6 digits</span>
+            </div>
+         </div>
          <input 
             class="choose-color-txt" 
             type="text" 
             name="startHex" 
             id="startHex"
+            placeholder="#d332d3"
          >
       </div>
 
       <div class="luminosity">
          <label 
             class="label" 
-            for="range">Choose color</label>
+            for="range">Choose color
+         </label>
          <input 
             class="luminosity-range" 
             type="range" 
@@ -37,6 +47,7 @@
             max="1" 
             value="0"
             step="0.025"
+            disabled
          >
       </div>
 
@@ -53,6 +64,9 @@
       </div>
 
    </div>
+   <script>
+      feather.replace()
+    </script>
    <script src="./app.js"></script>
 </body>
 </html>

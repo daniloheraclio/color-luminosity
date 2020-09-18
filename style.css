@@ -1,3 +1,7 @@
+:root {
+   --primary-color: #464d55;
+ }
+
 * {
    margin: 0;
    padding: 0;
@@ -9,7 +13,7 @@ body {
 }
 
 h3 {
-   color: #2b2b2b;
+   color: var(--primary-color);
    margin-bottom: 24px;
    text-align: center;
 }
@@ -25,7 +29,7 @@ h3 {
 .box-color {
    width: 200px;
    height: 200px;
-   border: 1px solid grey;
+   border: 1px solid var(--primary-color);
    border-radius: 4px;
    margin-bottom: 12px;
 }
@@ -33,13 +37,84 @@ h3 {
 .choose-color-txt,
 .new-value-txt,
 .luminosity-range {
-   width: 200px;
+   width: 100%;
    margin-bottom: 12px;
-   height: 24px;
+   margin-top: 6px;
    outline: none;
 }
+
+.choose-color-txt,
+.new-value-txt {
+   padding: 8px;
+   border: 1px solid var(--primary-color);
+   border-radius: 4px;
+}
+
+.choose-color {
+   position: relative;
+}
+
+.luminosity-range {
+   cursor: pointer;
+}
+
 .label {
    text-transform: uppercase;
    font-size: 10px;
    font-weight: 700;
 }
+
+.tooltip {
+   position: absolute;
+   top: 3px;
+   left: 100px;
+   display: inline-block;
+}
+
+.tooltip .icon-tooltip .icon{
+   position: relative;
+   width: 14px;
+   height: 14px;
+   stroke-width: 2px;
+   margin-left: 6px;
+}
+
+.tooltip .icon-tooltip:hover {
+   cursor: pointer;
+}
+
+.tooltip .icon-tooltip:hover .icon-tooltip-text {
+   display: inline-block;
+   width: 100px;
+   height: 30px;
+}
+
+ .tooltip .icon-tooltip .icon-tooltip-text {
+   visibility: hidden;
+   background-color: black;
+   color: #fff;
+   text-align: center;
+   border-radius: 6px;
+   padding: 5px 0;
+   position: absolute;
+   z-index: 1;
+   bottom: 120%;
+   left: 110%;
+   margin-left: -60px;
+   font-size: 13px;
+}
+
+.tooltip .icon-tooltip:hover .icon-tooltip-text::after {
+   content: "";
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   margin-left: -5px;
+   border-width: 5px;
+   border-style: solid;
+   border-color: black transparent transparent transparent;
+ }
+
+ .tooltip .icon-tooltip:hover .icon-tooltip-text {
+   visibility: visible;
+ }
